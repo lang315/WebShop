@@ -3,7 +3,7 @@ using WebShop.Model.Models;
 
 namespace WebShop.Data.Respositories
 {
-    public interface IProductTagRepository
+    public interface IProductTagRepository : IRepository<ProductTag>
     {
     }
 

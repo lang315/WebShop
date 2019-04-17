@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebShop.Model.Abstract;
 
 namespace WebShop.Model.Models
@@ -42,5 +38,8 @@ namespace WebShop.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
+
+        [ForeignKey("CategoryID")]
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
     }
 }

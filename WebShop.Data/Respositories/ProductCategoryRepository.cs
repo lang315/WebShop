@@ -5,7 +5,7 @@ using WebShop.Model.Models;
 
 namespace WebShop.Data.Respositories
 {
-    public interface IProductCategoryRepository
+    public interface IProductCategoryRepository : IRepository<ProductCategory>
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }

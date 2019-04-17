@@ -9,7 +9,7 @@ using WebShop.Model.Models;
 namespace WebShop.Data.Respositories
 {
 
-    public interface IVisitorStatisticRepository
+    public interface IVisitorStatisticRepository : IRepository<VisitorStatistic>
     {
     }
 

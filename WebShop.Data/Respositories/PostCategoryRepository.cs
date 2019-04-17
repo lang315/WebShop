@@ -8,7 +8,7 @@ using WebShop.Model.Models;
 
 namespace WebShop.Data.Respositories
 {
-    public interface IPostCategoryRepository
+    public interface IPostCategoryRepository : IRepository<PostCategory>
     {
     }
 
