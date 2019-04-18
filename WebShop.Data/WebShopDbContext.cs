@@ -1,9 +1,11 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 using WebShop.Model.Models;
+
 
 namespace WebShop.Data
 {
-    public class WebShopDbContext : DbContext
+    public class WebShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public WebShopDbContext() : base("WebShopConnection")
         {
@@ -29,9 +31,15 @@ namespace WebShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
         public DbSet<Error> Errors { get; set; }
 
+        public static WebShopDbContext Create()
+        {
+            return new WebShopDbContext();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }
