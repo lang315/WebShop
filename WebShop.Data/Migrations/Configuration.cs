@@ -7,6 +7,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using WebShop.Common;
     using WebShop.Model.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<WebShop.Data.WebShopDbContext>
