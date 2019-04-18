@@ -25,6 +25,9 @@
                 }
             }
             apiService.get('/api/productcategory/getall', config, function (result) {
+                if (result.data.TotalCount == 0) {
+                    console.warn('Không có bản ghi nào được tìm thấy.');
+                }
                 $scope.productCategories = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pagesCount = result.data.TotalPages;
